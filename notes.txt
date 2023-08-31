@@ -9,3 +9,12 @@ SQL (Structure Query Language) : MySQL, MSSQL, PostgresQL, Oracle etc
 NoSQL : MongoDB, Cassandra DB, GraphQL etc
 
 Mongo? MQL
+
+31 Aug
+Events module
+
+element.addEventListener(callbackFn);
+onClick={callbackFn}
+
+Event Emitter : Emits the event
+Event Listener : Receives/Listens the event
