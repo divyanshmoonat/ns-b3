@@ -1,0 +1,15 @@
+{
+  "name": "webservices",
+  "version": "1.0.0",
+  "description": "my first node application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "divyansh",
+  "license": "ISC"
+}

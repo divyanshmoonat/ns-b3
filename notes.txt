@@ -1,0 +1,11 @@
+30 Aug
+
+NodeJS
+Express
+
+Database
+
+SQL (Structure Query Language) : MySQL, MSSQL, PostgresQL, Oracle etc
+NoSQL : MongoDB, Cassandra DB, GraphQL etc
+
+Mongo? MQL
