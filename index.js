@@ -1,7 +1,7 @@
 const os = require('node:os');
 const fs = require("node:fs");
 const events = require("node:events");
-
+const http = require("node:http");
 
 // import axios from 'axios'; // ESM
 // const axios = require("axios"); // CJS
@@ -41,6 +41,7 @@ const events = require("node:events");
  * OS
  * FS
  * http
+ * events
  * crypto
  * etc
  */
@@ -143,3 +144,57 @@ const colors = ["Green", "Yellow", "Red"];
 //         colorIndex++;
 //     }
 // }, 5_000);
+
+let list = [
+    {
+        id: 1,
+        name: "User 1",
+        age: 50,
+    },
+    {
+        id: 2,
+        name: "User 2",
+        age: 20,
+    },
+    {
+        id: 3,
+        name: "User 3",
+        age: 30,
+    },
+];
+
+list = JSON.stringify(list);
+
+
+const httpServer = (req, res) => {
+    // console.log("Request received from Client");
+    // console.log(req.url);
+    if (req.url === "/list") {
+        console.log(req.method);
+        if (req.method === "GET") {
+            res.end(list);
+        } else {
+            const error = { message: "Invalid API method" }
+            res.end(JSON.stringify(error))
+        }
+        // res.write("This is /list api");
+    } else if (req.url === "/login") {
+        const output = {
+            message: "Logged In successfully"
+        }
+        res.end(JSON.stringify(output))
+        // res.write("This is /login api")
+    } else {
+        res.write(`${req.url} not found`)
+    }
+    res.end();
+};
+
+const portNo = 8081;
+
+const onServerUp = () => {
+    console.log("Server is up and running on port", portNo);
+};
+
+const server = http.createServer(httpServer);
+server.listen(portNo, onServerUp);

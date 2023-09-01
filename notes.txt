@@ -1,3 +1,55 @@
+Backend?
+
+
+Client-Server Model
+
+
+Web Devlopment
+1. Front End Dev : Process of developing UI which is visible on client's screen
+2. Back End Dev : Process of fetching/storing and processing the data
+
+Full Stack Developer
+
+
+Technologies : 
+
+Front End : HTML, CSS and JS (Vanilla JS)
+Front End FW/Lib : Angular, React, Vue, KnockoutJS, Dojo etc
+Back End : 
+    Java : Spring, Spring Boot, Hibernate, Struts etc, 
+    .net : MVC Framework, Entity Framework, SiteCore etc, 
+    PHP : Laravel, CI (Code Igniter), Symphony, Drupal, Wordpress etc, 
+    GoLang, 
+    ROR, 
+    JS : ExpressJS, NestJS, Ember JS etc
+
+MERN : Mongo Express React   Node
+MEAN : Mongo Express Angular Node
+
+Node? JS Environment : File system, operating system, security features etc
+Java : JRE (Java Runtime Environment)
+
+NPM?
+
+Android : Play Store
+MI Store
+Samsung Store
+
+Apple : App Store
+Windows : Windows Store
+
+
+JS Store : NPM (npmjs.com) (Node Package Manager)
+Yarn 
+PHP : Composer
+Python : PIP etc
+
+
+Low Level Language : Machines C, C++, Pascal etc
+High Level Language : They work on OS : JS, PHP, Java etc
+
+NodeJS? (Majorly JS, Minor C++)
+
 30 Aug
 
 NodeJS
@@ -18,3 +70,29 @@ onClick={callbackFn}
 
 Event Emitter : Emits the event
 Event Listener : Receives/Listens the event
+
+1 Sep
+
+Req/Res => http calls
+
+XmlHttpRequest (XHR) => Mechanism to call APIs
+fetch() => XMLHttpRequest
+axios() => XMLHttpRequest
+
+Port => A gate in our system which allows http requests to pass through
+
+Gate A => 3000
+Gate B => 8080
+Gate C => 65535
+
+21/22 => FTP
+443 => HTTPS 
+
+
+Req -> URL/EndPoint?
+http://localhost:8081
+
+
+Methods
+GET
+POST
