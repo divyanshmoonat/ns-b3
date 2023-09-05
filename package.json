@@ -1,8 +1,9 @@
 {
-  "name": "webservices",
+  "name": "divyansh_module",
   "version": "1.0.0",
   "description": "my first node application",
-  "main": "calc.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"

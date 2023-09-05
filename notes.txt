@@ -103,3 +103,82 @@ npm => node package manager
 package.json
 
 https://www.geeksforgeeks.org/difference-between-tilde-and-caret-in-package-json/
+
+5 Sep
+Steps to publish package on npmjs.com
+1. Create a nodejs pacakge
+2. Create an account npmjs.com
+3. In package.json change the "main" entry to your main js file
+4. Verify the package name to be unique in package.json use command npm search <pkg-name>
+5. npm login
+6. npm publish
+
+
+How nodejs works?
+Components of nodejs
+
+Engines : Used to run js (chrome : v8, mozilla: spider monkey, edge: chakra etc )
+v8 engine : C++
+event loop : Watchman
+event queue : Operations are queued here (Blocking IO, Non Blocking IO (Sync/Async))
+thread pool : libuv (C++) -> It takes care of async operations
+call stack : Executes the operations of JS
+
+Thread = Process
+
+Is NodeJS multithreaded?
+NodeJS is single threaded since it has only 1 main thread, however there is a c++ library (libuv) which provied multi threading capabilites to nodejs using system(hardware) resources.
+https://github.com/nodejs/node
+
+API (Application Programming Interface)
+
+REST APIs (RepresEntations State Transfer) : JSON
+SOAP APIs (Simple Object Access Protocol) : XML (Extensible Markup Language)
+
+E.g :
+
+JSON
+user : {
+    name: "ABC",
+    age: 30,
+    address: "ABC 123 Street"
+}
+
+
+XML
+<user>
+    <name>ABC</name>
+    <age>30</age>
+    <address>ABC 123 Street</address>
+</user>
+
+APIs
+1. End Point / URL : http://abc.com/list
+2. HTTP Method ?
+
+GET : To fetch the resources from server (Get the list of products, get details of a user etc)
+POST : To store data on server (Login, Signup, Place order etc)
+PUT : To replace a resource on the server
+PATCH : To update a resource on the server
+DELETE : To delete a resource on the server
+
+AXIOS.GET
+AXIOS.POST
+
+fetch("",{method: "POST"})
+
+
+End point : https://abc.com/user
+GET
+POST
+PUT
+PATCH
+DELETE
+
+API/HTTP call Parts
+1. Header : Meta data
+2. Body : Actual data
+
+
+Static API : Always provides same data
+Dynamic API : It provides different data based on the parameter
