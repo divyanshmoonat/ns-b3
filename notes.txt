@@ -96,3 +96,10 @@ http://localhost:8081
 Methods
 GET
 POST
+
+4 Sep 
+
+npm => node package manager
+package.json
+
+https://www.geeksforgeeks.org/difference-between-tilde-and-caret-in-package-json/

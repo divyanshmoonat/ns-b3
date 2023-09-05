@@ -2,7 +2,7 @@
   "name": "webservices",
   "version": "1.0.0",
   "description": "my first node application",
-  "main": "index.js",
+  "main": "calc.js",
   "scripts": {
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,8 @@
     "api"
   ],
   "author": "divyansh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.7"
+  }
 }

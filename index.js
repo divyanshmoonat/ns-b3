@@ -3,6 +3,10 @@ const fs = require("node:fs");
 const events = require("node:events");
 const http = require("node:http");
 
+const dayjs = require("dayjs");
+
+const calc = require("./calc.js");
+
 // import axios from 'axios'; // ESM
 // const axios = require("axios"); // CJS
 
@@ -198,3 +202,9 @@ const onServerUp = () => {
 
 const server = http.createServer(httpServer);
 server.listen(portNo, onServerUp);
+
+
+console.log(dayjs().format("DD/MM/YYYY hh:mm:ss A"))
+
+const result = calc.add(10, 5);
+console.log("RESULT IS", result)
