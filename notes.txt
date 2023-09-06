@@ -182,3 +182,11 @@ API/HTTP call Parts
 
 Static API : Always provides same data
 Dynamic API : It provides different data based on the parameter
+
+6 Sep
+
+Express : JS Framework
+
+1. Install express npm i express
+2. Import express in index.js file
+3. Create an express object
