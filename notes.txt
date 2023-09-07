@@ -190,3 +190,12 @@ Express : JS Framework
 1. Install express npm i express
 2. Import express in index.js file
 3. Create an express object
+
+7 Sep
+
+HTTP Status Codes : 
+1xx
+2xx (Success) : 200 Ok, 201 Created, 202 Accepted, 204 No Content etc
+3xx
+4xx (Client Error) : 400  Bad Request, 401 Unatuthorized, 403 Forbidden (Access Denied), 404 Not found
+5xx (Server Error) : 500 Internal Server error, 503, 504 etc
