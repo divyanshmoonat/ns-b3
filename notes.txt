@@ -199,3 +199,45 @@ HTTP Status Codes :
 3xx
 4xx (Client Error) : 400  Bad Request, 401 Unatuthorized, 403 Forbidden (Access Denied), 404 Not found
 5xx (Server Error) : 500 Internal Server error, 503, 504 etc
+
+11 Sep
+
+Modular Structure 
+Architecture : 
+MVC (Model View Controller)
+
+View : UI ?
+Controller : Controlling Unit / Business Logic, Routes etc
+Model : Data Modelling (Defining the structure of data)
+
+Tightly Coupled : Java, .net, PHP, nodejs
+Loosely Coupled : Java, .net, PHP, nodejs
+
+MVVM etc
+
+Modules in Project
+
+Product : Get list, get details, update product, delete product etc
+User : Login, Signup, forgot password, reset password etc
+Cart : Add to cart, remove from cart, update cart, get cart etc
+Wishlist : Add to cart, remove from cart, update cart, get cart etc
+Checkout : Get billing address, Get shipping address, get payment methods etc
+My Account : Order history, Order tracking etc
+
+
+Express Routing
+1. Require express
+2. Create router instance using new express.Router();
+3. router.get(), router.post()
+
+
+/api/api-version/module-name/end-point
+
+/api/v1/user/login
+/api/v1/user/register
+/api/v1/user/forgot-password
+
+/api/v1/product/list
+/api/v1/product/details
+/api/v1/product/update
+/api/v1/product/delet
