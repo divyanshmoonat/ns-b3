@@ -1,7 +1,16 @@
+const dummyProductsList = [
+    {
+        title: "iPhone 15",
+        price: 125000,
+        qty: 100,
+        image: "/hotel-img.webp"
+    }
+]
+
 const productsList = (req, res) => {
     res.json({
         success: true,
-        results: products
+        results: dummyProductsList
     });
     // res.send("Product list API");
 };
@@ -30,9 +39,8 @@ const productDelete = (req, res) => {
     })
 };
 
-const createProduct = (req,res) => {
+const createProduct = (req, res) => {
     console.log(req.body);
-    const newId = product[product.length - 1].id + 1
     res.json({
         success: true,
         message: "Create product API"

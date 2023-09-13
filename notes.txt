@@ -247,3 +247,23 @@ Express Routing
 Middleware
 
 Front end calls the API -> Request is received by the server -> (MIDDLWARE) -> Route is matched on the server -> Request is sent to the controller -> Response is sent back to the client
+
+Accepts the incomming request
+Perfrom certain checks
+Decide wheter to allow this rquest to go through
+
+Built in middlewares
+Third party middlewares
+Custom middleware
+
+
+Same Origin (Client : http://localhost:3000, Server : http://localhost:3000)
+Cross Origin (Client : http://localhost:8081, Server : https://abc.com)
+
+CORS (Cross Origin Resource Sharing)
+NPM Package : https://www.npmjs.com/package/cors
+
+Scope 
+1. App level
+2. Module level
+3. Route level

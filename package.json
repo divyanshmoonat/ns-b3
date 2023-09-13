@@ -13,7 +13,9 @@
   "author": "divyansh",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dayjs": "^1.11.7",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "response-time": "^2.3.2"
   }
 }
