@@ -1,43 +1,18 @@
 const express = require("express");
+
+const proudctController = require("../controllers/Product");
+
 const router = new express.Router();
 
-router.get(`/list`, (req, res) => {
-    res.json({
-        success: true,
-        results: products
-    });
-    // res.send("Product list API");
-});
+router.get(`/list`, proudctController.productsList);
 
-router.post(`/list`, (req, res) => {
-    res.json({
-        success: true
-    })
-});
+router.get(`/details/:productId`, proudctController.productDetails);
 
-router.get(`/details/:productId`, (req, res) => {
-    const productId = req.params.productId;
-    const product = products.find(p => p.id == productId);
+router.put(`/replace`, proudctController.productReplace);
 
-    res.json({
-        success: true,
-        result: product
-    });
-});
+router.delete(`/delete`, proudctController.productDelete);
 
-router.put(`/replace`, (req, res) => {
-    //ToDo : put your logic here
-    res.json({
-        success: true,
-        message: "Product Replace Dummy API"
-    });
-});
-
-router.delete(`/delete`, (req, res) => {
-    res.status(404).json({
-        success: true
-    })
-});
+router.post("/", proudctController.createProduct)
 
 
 module.exports = router;

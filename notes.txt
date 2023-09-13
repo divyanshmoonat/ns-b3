@@ -241,3 +241,9 @@ Express Routing
 /api/v1/product/details
 /api/v1/product/update
 /api/v1/product/delet
+
+12 Sep
+
+Middleware
+
+Front end calls the API -> Request is received by the server -> (MIDDLWARE) -> Route is matched on the server -> Request is sent to the controller -> Response is sent back to the client

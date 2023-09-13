@@ -1,6 +1,9 @@
-app.get(`/api/${apiVersion}/cart`, (req, res) => {
-    res.json({
-        success: true,
-        message: "Dummy cart API"
-    })
-});
+const express = require("express");
+
+const cartController = require("../controllers/Cart");
+
+const router = new express.Router();
+
+router.get(`/`, cartController.getCart);
+
+module.exports = router;

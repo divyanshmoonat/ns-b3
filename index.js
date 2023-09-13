@@ -5,20 +5,20 @@ const express = require('express');
 const app = express();
 
 const userRoutes = require("./routes/User.js");
-const productRoutes = require("./routes/Product.js")
+const productRoutes = require("./routes/Product.js");
+const cartRoutes = require("./routes/Cart.js");
 
 const apiVersion = 'v1';
+
+app.use(express.json()); // Middleware to access req.body in controllers
 
 // Connecting routes with application
 
 app.use("/api/v1/user/", userRoutes);
 app.use("/api/v1/product/", productRoutes);
-// app.use("/api/v1/cart", cartRoutes);
+app.use("/api/v1/cart", cartRoutes);
 // app.use("/api/v1/wishlist", wishlistRoute);
 
-// /user/login
-//     / user / register
-//     / user / edit
 
 // console.log(process.env.API_KEY);
 

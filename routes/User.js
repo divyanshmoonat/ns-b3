@@ -1,30 +1,16 @@
 const express = require('express');
 
+const userController = require("../controllers/User");
+
 const router = new express.Router();
 
 // Routing
 
-const apiVersion = 'v1';
+router.post(`/register`, userController.registerUser);
 
-router.post(`/register`, (req, res) => {
-    res.json({
-        success: true,
-        message: "Dummy Registration API"
-    })
-});
+router.post(`/login`, userController.loginUser);
 
-router.post(`/login`, (req, res) => {
-    res.json({
-        success: true,
-        message: "Dummy Login API"
-    })
-});
-
-router.patch(`/edit`, (req, res) => {
-    res.json({
-        success: true
-    })
-});
+router.patch(`/edit`, userController.editUser);
 
 
 module.exports = router;
