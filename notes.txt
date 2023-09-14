@@ -267,3 +267,89 @@ Scope
 1. App level
 2. Module level
 3. Route level
+
+14 Sep
+DB : 
+NoSQL : MongoDB (C++)
+SQL : MySQL
+
+Database Server => Databases => Collections => Records (Documents)
+
+Eg : Database Server => ecommerce => users => user
+Database Server => ecommerce => products => proudct
+
+CLI (Command Line Interface)
+GUI (Graphical User Interface) : MongoDB Compass, RoboMongo
+
+localhost:27017
+
+MongoDB Data Format : BSON
+Query : A statement to fetch the data
+
+{
+    name: "Peter",
+    phone: "1234567890",
+    email: "peter@example.com",
+    address: "ABCD 1234, NY",
+    age: 30,
+    hasDrivingLicense: true
+}
+
+// Schema
+{
+    name : {
+        type: String
+    },
+    phone:  {
+        type: String
+    },
+    email: {
+        type: String
+    },
+    address: {
+        type: String
+    },
+    age: {
+        type: Number
+    },
+    hasDrivingLicense: {
+        type: Boolean
+    }
+}
+
+// Product Schema
+{
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    descripton: {
+        type: String,
+        default: ""
+    },
+    expiryDate: {
+        type: Date,
+        default: "2099-01-01"
+    },
+    quantity: {
+        type: Number,
+        required: true
+    },
+    ratings: {
+        type: Number,
+        default: 5 
+    }
+}
+
+{
+    "name": "Mobile",
+    "price": 70000,
+    "description": "5G Mobile",
+    "expiryDate": "299-01-01",
+    "quantity": 1000,
+    "ratings" : 4.5
+}
