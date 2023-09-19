@@ -353,3 +353,59 @@ Query : A statement to fetch the data
     "quantity": 1000,
     "ratings" : 4.5
 }
+
+19 Sep
+show dbs
+use <db-name>
+show collections
+
+INSERTIONG QUERY => db.<collection-name>.insertOne({key value pairs});
+FIND QUERY => db.<collection-name>.find({find parameteres});
+Eg: Find all the products with brand as Samsung
+db.products.find({brand: "Samsumg"});
+
+$lt (<)
+$gt (>)
+$gte (>=)
+$lte (<=)
+Find all the products whose prices is greater than $500
+
+db.products.find({
+    price: {
+        $gt: 500
+    }
+})
+
+Find all the products whose prices is less than $500
+db.products.find({
+    price: {
+        $lt: 500
+    }
+}).count()
+
+Find all the products whose price is between 499 and 599
+db.products.find({
+    price: {
+        $gte: 499,
+        $lte: 599
+    }
+})
+
+db.products.find({
+    $and: [
+        {
+            price: {
+                $gte: 499
+            }
+        },
+        {
+            price: {
+                $lte: 599
+            }
+        }
+    ]
+})
+
+$and => &&
+$or => ||
+$not => !
