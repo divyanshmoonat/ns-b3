@@ -406,6 +406,157 @@ db.products.find({
     ]
 })
 
+Get all the products whose brand is Samsung and price is $1499
+db.products.find({
+    $and: [
+        {
+            brand: "Samsung"
+        },
+        {
+            price: 1499
+        }
+    ]
+})
+
+Get all the products whose brand is Samsung and price is greater than $500
+db.products.find({
+    $and: [
+        {
+            brand: "Samsung"
+        },
+        {
+            price: {
+                $gt: 500
+            }
+        }
+    ]
+})
+
+Get all the products whose brand is Samsung and price is greater than $500 and ratings are greater than 4
+
+db.products.find({
+    $and: [
+        {
+            brand: "Samsung"
+        },
+        {
+            price: {
+                $gt: 500
+            }
+        },
+        {
+            rating: {
+                $gt: 4
+            }
+        }
+    ]
+})
+
+Find all the products whose category is smartphones or rating are greater than 4.9
+db.products.find({
+    $or: [
+        {
+            category: "smartphones"
+        },
+        {
+            rating: {
+                $gt: 4.9
+            }
+        }
+    ]
+}).count()
+
+Find all smartphones from the database whose rating is greater than 4 and price less than 500
+
+% Find all smartphones from the database whose rating is greater than 4 and price less than 500
+Find all the products whose category is smartphones and rating is greater than 4 and price is less than 500
+Find all the smartphones from the database have at least 4 star ratings and are cheaper then $500
+
+
+db.products.find({
+    $and: [
+        {
+            category: "smartphones"
+        },
+        {
+            rating: {
+                $gt: 4
+            }
+        },
+        {
+            price: {
+                $lt: 500
+            }
+        }
+    ]
+}).count()
+
+db.products.find({
+    rating: {
+        $gt: 4.5
+    }
+}).limit(5)
+
+List all the products in decending order of their prices
+
+db.products
+.find({})
+.sort({
+    price: 1
+})
+.limit(10)
+.skip(20)
+
 $and => &&
 $or => ||
 $not => !
+
+
+Pagination 
+99 Products
+Page 1 : 1-10
+Page 2 : 11-20
+Page 3 : 21-30
+...
+
+
+Partial search
+Find all the products containing oil in their name
+
+db.products.find({
+    oil: /oil/i
+})
+
+db.products.find({
+    title: /shirt/i
+})
+
+Update
+
+Change the rating to 5 of product whose id is 2
+db.<collection-name>.update(<find-object>,<update-object>);
+db.products.update(
+    {id: 2},
+    {
+    $set : {
+        rating: 5
+    }
+})
+
+
+Change the title of product with id 3 to Laptop
+db.products.update(
+    { id: 3},
+    {
+        $set: {
+            title: "Laptop"
+        }
+    }
+)
+
+Delete
+Delete the product with id 2
+db.<collection-name>.remove(<find-object>)
+db.products.remove({
+    id: 2
+})
