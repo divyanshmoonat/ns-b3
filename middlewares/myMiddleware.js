@@ -1,8 +1,5 @@
 const myMiddleware = (req, res, next) => {
-    console.log("My middleware called");
-    req.body = {
-        text: "New item added by middleware"
-    }
+    // console.log("My middleware called");
     next();
     // res.json({
     //     success: true,

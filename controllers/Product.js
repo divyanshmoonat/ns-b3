@@ -1,24 +1,22 @@
-const dummyProductsList = [
-    {
-        title: "iPhone 15",
-        price: 125000,
-        qty: 100,
-        image: "/hotel-img.webp"
-    }
-]
+const Product = require("../models/Product.js");
 
-const productsList = (req, res) => {
+const productsList = async (req, res) => {
+    const pageNo = +req.query.pageNo;
+    const pageSize = +req.query.pageSize;
+    const products = await Product.find({})
+        .skip((pageNo - 1) * pageSize)
+        .limit(pageSize)
+    // console.log(products);
     res.json({
         success: true,
-        results: dummyProductsList
+        results: products
     });
     // res.send("Product list API");
 };
 
-const productDetails = (req, res) => {
+const productDetails = async (req, res) => {
     const productId = req.params.productId;
-    const product = products.find(p => p.id == productId);
-
+    const product = await Product.findById(productId);
     res.json({
         success: true,
         result: product

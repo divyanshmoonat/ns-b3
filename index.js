@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const responseTime = require("response-time");
+const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/User.js");
 const productRoutes = require("./routes/Product.js");
@@ -9,7 +10,14 @@ const cartRoutes = require("./routes/Cart.js");
 const app = express();
 const apiVersion = 'v1';
 
-
+//mongodb://host:portNo/dbName
+mongoose.connect("mongodb://127.0.0.1:27017/ecomm")
+    .then(() => {
+        console.log("Connection with DB established successfully");
+    })
+    .catch((err) => {
+        console.log("ERROR CONNECTING WITH DATABASE", err);
+    })
 
 app.use(express.json()); // Middleware to access req.body in controllers
 app.use(express.urlencoded()); // Middleware to access req.body when data is in the form of form-urlencoded

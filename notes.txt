@@ -560,3 +560,7 @@ db.<collection-name>.remove(<find-object>)
 db.products.remove({
     id: 2
 })
+
+21 Sep
+DB - NodeJS connection
+ODM (Object Data Model) Mongoose
