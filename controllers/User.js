@@ -25,15 +25,41 @@ const loginUser = (req, res) => {
     })
 };
 
-const editUser = (req, res) => {
+const editUser = async (req, res) => {
+    const userId = req.body._id;
+    const updateObject = {
+        // password: req.body.password
+        prouctsPurchaed: req.body.prouctsPurchaed
+    };
+    const result = await User.findByIdAndUpdate(userId, updateObject);
     res.json({
         success: true,
-        message: "Dummy Edit user API"
+        message: "User edited successfully"
+    })
+};
+
+const deleteUser = async (req, res) => {
+    const result = await User.findByIdAndDelete(req.body._id);
+    res.json({
+        success: true,
+        message: "User account deleted successfully"
+    })
+};
+
+const getUser = async (req, res) => {
+    const users = await User
+    .find({})
+    .populate("prouctsPurchaed")
+    res.json({
+        success: true,
+        result: users
     })
 };
 
 module.exports = {
     registerUser,
     loginUser,
-    editUser
+    editUser,
+    deleteUser,
+    getUser
 }

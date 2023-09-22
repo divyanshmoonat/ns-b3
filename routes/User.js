@@ -13,5 +13,8 @@ router.post(`/login`, userController.loginUser);
 
 router.patch(`/edit`, userController.editUser);
 
+router.delete("/delete", userController.deleteUser);
+
+router.get("/list", userController.getUser);
 
 module.exports = router;

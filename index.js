@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/User.js");
 const productRoutes = require("./routes/Product.js");
 const cartRoutes = require("./routes/Cart.js");
+const orderRoutes = require("./routes/Order.js");
 
 const app = express();
 const apiVersion = 'v1';
@@ -31,6 +32,7 @@ app.use(responseTime());
 app.use("/api/v1/user/", userRoutes);
 app.use("/api/v1/product/", productRoutes);
 app.use("/api/v1/cart", cartRoutes);
+app.use("/api/v1/order", orderRoutes);
 // app.use("/api/v1/wishlist", wishlistRoute);
 
 

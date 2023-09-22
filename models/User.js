@@ -20,7 +20,10 @@ const userSchema = {
     password: {
         type: String,
         required: true
-    }
+    },
+    prouctsPurchaed: [
+        { type: mongoose.Types.ObjectId, ref: 'products' }
+    ]
 };
 
 const User = mongoose.model("users", userSchema);
