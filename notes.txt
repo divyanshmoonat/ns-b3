@@ -564,3 +564,29 @@ db.products.remove({
 21 Sep
 DB - NodeJS connection
 ODM (Object Data Model) Mongoose
+
+25 Sep
+Authentication vs Authorization
+
+Authentication : Login using username and password (Authenticated User)
+Authorization : Having access to a particular resource (Authorized User)
+
+Encryption, Decryption : Always done for security purpose
+Encoding, Decoding : Not done for security purpose
+
+Key : aklsdjf3w48f92384v50928238034j958039j0934
+------BEIGN PUBLIC KEY-----
+asdjfklj34vfuq34q8r390
+------END PUBLIC KEY------
+
+Algorithms : RSA, DEA, DEC Algorhtim
+
+Plain Text : 12345 + Key (Complex Math Equation)
+Cipher Text : f4wq5fqwe87fw6e7qweger#%@$#tw4gt43
+fajow4ru8f935v349852g09358q3940
+
+Encryption + Decryption : Plain -> Cipher and Cipher -> Plain 
+Hashing : Plain -> Cipher Text
+
+Scoial Engineering
+Brute Force Attack / Dictionary

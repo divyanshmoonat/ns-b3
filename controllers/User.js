@@ -1,17 +1,38 @@
 const User = require("../models/User");
+const bcrypt = require("bcrypt");
 
 const registerUser = async (req, res) => {
     // console.log(req.body);
+    const userData = {
+        "name": req.body.name,
+        "email": req.body.email,
+        "address": req.body.address,
+        "phone": req.body.phone,
+    };
+
+    const plainTextPassword = req.body.password;
+    /**
+     * 1. Import bcrypt
+     * 2. Generate salt
+     * 3. Hash the password
+     */
+
+    const salt = await bcrypt.genSalt(10);
+    console.log("SALT", salt);
+
+    const hashedPassword = await bcrypt.hash(plainTextPassword, salt);
+    console.log("HASH", hashedPassword);
+    userData.password = hashedPassword;
     try {
-        const user = new User(req.body);
-        await user.save();
+        const user = new User(userData);
+        const newUser = await user.save();
         res.json({
             success: true,
-            message: "User registered successfully"
+            message: "User registered successfully. User ID "
         })
     } catch (err) {
         console.log("ERROR", err);
-        res.status(400).json({
+        res.status(404).json({
             success: false,
             message: "An error occured"
         })
@@ -48,8 +69,8 @@ const deleteUser = async (req, res) => {
 
 const getUser = async (req, res) => {
     const users = await User
-    .find({})
-    .populate("prouctsPurchaed")
+        .find({})
+        .populate("prouctsPurchaed")
     res.json({
         success: true,
         result: users
