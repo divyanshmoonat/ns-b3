@@ -3,6 +3,8 @@ const cors = require('cors');
 const responseTime = require("response-time");
 const mongoose = require("mongoose");
 
+require("dotenv").config();
+
 const userRoutes = require("./routes/User.js");
 const productRoutes = require("./routes/Product.js");
 const cartRoutes = require("./routes/Cart.js");
@@ -12,7 +14,8 @@ const app = express();
 const apiVersion = 'v1';
 
 //mongodb://host:portNo/dbName
-mongoose.connect("mongodb://127.0.0.1:27017/ecomm")
+console.log("MONGOURI",process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("Connection with DB established successfully");
     })

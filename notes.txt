@@ -590,3 +590,19 @@ Hashing : Plain -> Cipher Text
 
 Scoial Engineering
 Brute Force Attack / Dictionary
+
+26 Sep
+Token : A string which identifies authenticity of user
+
+JWT (JSON Web Token)
+Parts : 3
+1. Header : Meta data (token type, algorithm)
+2. Body/ Payload : User data
+3. Checksum : Signature verification
+
+{
+    subject: "www.abc.com",
+    iat: <epoch timestamp>,
+    exp: <epoch timestamp>,
+    ...rest user details
+}
