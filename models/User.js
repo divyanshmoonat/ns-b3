@@ -23,7 +23,11 @@ const userSchema = {
     },
     prouctsPurchaed: [
         { type: mongoose.Types.ObjectId, ref: 'products' }
-    ]
+    ],
+    token: {
+        type: String,
+        default: ""
+    }
 };
 
 const User = mongoose.model("users", userSchema);

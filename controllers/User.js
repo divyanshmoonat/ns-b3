@@ -64,7 +64,8 @@ const loginUser = async (req, res) => {
         iat: now,
         exp: now + oneHrInMs,
         userId: userFromDb._id,
-        email: userFromDb.email
+        email: userFromDb.email,
+        role: "INSTRUCTOR"
     };
 
     const token = jwt.sign(jwtPayload, jwtSecretKey);
@@ -90,6 +91,7 @@ const loginUser = async (req, res) => {
     // console.log(isPasswordValid)
     // console.log(userFromDb)
     res.setHeader('my-new-header', "123");
+    await User.findByIdAndUpdate(userFromDb._id, { token });
     res.json({
         success: true,
         message: "User logged in successfully",
@@ -98,7 +100,7 @@ const loginUser = async (req, res) => {
 };
 
 const editUser = async (req, res) => {
-    const userId = req.body._id;
+    const userId = req.user._id;
     const updateObject = {
         // password: req.body.password
         prouctsPurchaed: req.body.prouctsPurchaed
@@ -128,10 +130,19 @@ const getUser = async (req, res) => {
     })
 };
 
+const logoutUser = async (req, res) => {
+    await User.findByIdAndUpdate(req.user._id, { token: "" });
+    res.json({
+        success: true,
+        message: "User logged out successfully"
+    });
+};
+
 module.exports = {
     registerUser,
     loginUser,
     editUser,
     deleteUser,
-    getUser
+    getUser,
+    logoutUser
 }

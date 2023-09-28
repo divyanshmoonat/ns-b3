@@ -1,8 +1,13 @@
 const Order = require("../models/Order.js");
 
 const createOrder = async (req, res) => {
-    console.log(req.body)
-    const order = new Order(req.body);
+
+    const orderData = {
+        ...req.body
+    };
+    orderData.user = req.user._id;
+
+    const order = new Order(orderData);
     const result = await order.save();
     console.log(result._id);
     res.json({
