@@ -14,7 +14,7 @@ const app = express();
 const apiVersion = 'v1';
 
 //mongodb://host:portNo/dbName
-console.log("MONGOURI",process.env.MONGO_URI);
+console.log("MONGOURI", process.env.MONGO_URI);
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("Connection with DB established successfully");
@@ -37,6 +37,18 @@ app.use("/api/v1/product/", productRoutes);
 app.use("/api/v1/cart", cartRoutes);
 app.use("/api/v1/order", orderRoutes);
 // app.use("/api/v1/wishlist", wishlistRoute);
+
+// Global error handler
+app.use((error, req, res, next) => {
+    if (error) {
+        console.log("ERROR OCCURED");
+        // Write error to the log file
+    }
+    res.status(error.statusCode).json({
+        success: false,
+        msg: error.message
+    });
+});
 
 
 // console.log(process.env.API_KEY);
