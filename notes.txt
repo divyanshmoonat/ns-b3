@@ -606,3 +606,6 @@ Parts : 3
     exp: <epoch timestamp>,
     ...rest user details
 }
+
+3 Oct 
+https://www.npmjs.com/package/winston

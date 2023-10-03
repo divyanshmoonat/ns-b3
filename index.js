@@ -10,6 +10,8 @@ const productRoutes = require("./routes/Product.js");
 const cartRoutes = require("./routes/Cart.js");
 const orderRoutes = require("./routes/Order.js");
 
+const logger = require("./utils/logger.js");
+
 const app = express();
 const apiVersion = 'v1';
 
@@ -38,10 +40,21 @@ app.use("/api/v1/cart", cartRoutes);
 app.use("/api/v1/order", orderRoutes);
 // app.use("/api/v1/wishlist", wishlistRoute);
 
+app.use("*", (req, res) => {
+    res.status(404).json({
+        message: "Route not found"
+    });
+});
+
 // Global error handler
 app.use((error, req, res, next) => {
     if (error) {
-        console.log("ERROR OCCURED");
+        logger.log({
+            level: "info",
+            message: error
+        })
+        // console.log("ERROR OCCURED", error);
+
         // Write error to the log file
     }
     res.status(error.statusCode).json({
