@@ -138,11 +138,20 @@ const logoutUser = async (req, res) => {
     });
 };
 
+const uploadProfilePicture = async (req, res) => {
+    console.log(req.file.path);
+    res.json({
+        success: true,
+        messge: "Profile picture updated successfully"
+    })
+};
+
 module.exports = {
     registerUser,
     loginUser,
     editUser,
     deleteUser,
     getUser,
-    logoutUser
+    logoutUser,
+    uploadProfilePicture
 }

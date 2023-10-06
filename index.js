@@ -57,9 +57,9 @@ app.use((error, req, res, next) => {
 
         // Write error to the log file
     }
-    res.status(error.statusCode).json({
+    res.status(error.statusCode || 500).json({
         success: false,
-        msg: error.message
+        msg: error.message || "Something went wrong"
     });
 });
 

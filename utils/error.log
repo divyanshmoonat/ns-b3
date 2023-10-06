@@ -1,2 +1,9 @@
 {"level":"info","message":{"details":"Something went wrong, test error","statusCode":500}}
 {"level":"info","message":{"details":"Something went wrong, test error","statusCode":500},"timestamp":"2023-10-03T15:06:45.951Z"}
+{"level":"info","message":{"code":"ENOENT","errno":-4058,"path":"D:\\Classes\\files\\0ced35e1b341ccb281d14bde97550fca","storageErrors":[],"syscall":"open"},"timestamp":"2023-10-05T15:28:22.724Z"}
+{"level":"info","message":{"code":"ENOENT","errno":-4058,"path":"D:\\Classes\\files\\0b651aa7f64a6749ed878dc79faeebe0","storageErrors":[],"syscall":"open"},"timestamp":"2023-10-05T15:29:29.787Z"}
+{"level":"info","message":{"code":"ENOENT","errno":-4058,"path":"D:\\Classes\\Nov 2022\\files\\2a05042820a93d35756bf7eeff247685","storageErrors":[],"syscall":"open"},"timestamp":"2023-10-05T15:30:19.835Z"}
+{"level":"info","message":{"code":"ENOENT","errno":-4058,"path":"D:\\Classes\\Nov 2022\\files\\abc.png","storageErrors":[],"syscall":"open"},"timestamp":"2023-10-05T15:32:13.001Z"}
+{"level":"info","message":{"code":"LIMIT_FILE_SIZE","field":"profilePicture","message":"File too large","name":"MulterError","storageErrors":[]},"timestamp":"2023-10-05T15:42:39.244Z"}
+{"level":"info","message":{"code":"LIMIT_FILE_SIZE","field":"profilePicture","message":"File too large","name":"MulterError","storageErrors":[]},"timestamp":"2023-10-05T15:43:41.675Z"}
+{"level":"info","message":{"code":"LIMIT_FILE_SIZE","field":"profilePicture","message":"File too large","name":"MulterError","storageErrors":[]},"timestamp":"2023-10-05T15:45:03.449Z"}
